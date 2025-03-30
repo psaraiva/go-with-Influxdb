@@ -1,0 +1,12 @@
+
+services:
+  influxdb:
+    image: influxdb:2.7.11
+    container_name: influxdb-container
+    ports:
+      - "8086:8086" # Mapeia a porta 8086 do container para a porta 8086 do host
+    volumes:
+      - influxdb-data:/var/lib/influxdb # Persistência de dados
+
+volumes:
+  influxdb-data:
